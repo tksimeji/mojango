@@ -1,6 +1,42 @@
 # Mojango
 
-Mojang API client for Java and Kotlin developers.
+### Mojang API client for Java and Kotlin.
+
+![Version](https://img.shields.io/badge/version-0.0.0-blue?style=flat-square)
+![Licence](https://img.shields.io/badge/licence-MIT-red?style=flat-square)
+
+![](./assets/c263de08-676b-423d-8126-19eb1aebbc90.png)
+
+This is an unofficial 3rd party API client and is not affiliated with Mojang Studios or Microsoft.
+
+## Installation
+
+Mojango is available on Maven Central.
+To add dependency using Gradle, write the following your `build.gradle` (Groovy DSL)
+
+```groovy
+dependencies {
+    implementation 'com.tksimeji:mojango:x.y.z'
+}
+```
+
+or in the `build.gradle.kts` file (Kotlin DSL)
+
+```kotlin
+dependencies {
+    implementation("com.tksimeji:mojango:x.y.z")
+}
+```
+
+To add dependency using Maven, write the following in `pom.xml`.
+
+```xml
+<dependency>
+    <groupId>com.tksimeji</groupId>
+    <artifactId>mojango</artifactId>
+    <version>x.y.z</version>
+</dependency>
+```
 
 ## Configure
 
