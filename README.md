@@ -47,10 +47,10 @@ The default value is the 5 minutes (=`1000 * 60 * 5`).
 
 ```java
 // Check your current ttl (Time To Live)
-Mojango.getTtl();
+Mojango.INSTANCE.getTtl();
 
 // Change the ttl (Time To Live)
-Mojango.setTtl(1000 * 60);
+Mojango.INSTANCE.setTtl(1000 * 60);
 ```
 
 Set a limit on requests per minute.
@@ -58,10 +58,10 @@ The default value is the API rate (60 tunes/min).
 
 ```java
 // Check your current rate limit
-Mojango.getRateLimit();
+Mojango.INSTANCE.getRateLimit();
 
 // Change the rate limit
-Mojango.setRateLimit(64);
+Mojango.INSTANCE.setRateLimit(64);
 ```
 
 ## Usage
@@ -74,10 +74,10 @@ there is no need to retrieve the instance again.
 
 ```java
 // Get by UUID
-MinecraftAccount account = Mojango.account(UUID.fromString("ee54c324-9ab4-472e-aa4d-392f15b820fb"));
+MinecraftAccount account = Mojango.INSTANCE.account(UUID.fromString("ee54c324-9ab4-472e-aa4d-392f15b820fb"));
 
 // Get by name
-MinecraftAccount account = Mojango.account("tksimeji");
+MinecraftAccount account = Mojango.INSTANCE.account("tksimeji");
 ```
 
 Next, use the account you obtained to carry out the process.
