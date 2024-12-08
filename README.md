@@ -2,7 +2,7 @@
 
 ### Mojang API client for Java and Kotlin.
 
-![Version](https://img.shields.io/badge/version-0.0.0-blue?style=flat-square)
+![Version](https://img.shields.io/badge/version-0.0.1-blue?style=flat-square)
 ![Licence](https://img.shields.io/badge/licence-MIT-red?style=flat-square)
 
 ![](./assets/c263de08-676b-423d-8126-19eb1aebbc90.png)
