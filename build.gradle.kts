@@ -1,13 +1,15 @@
 import cl.franciscosolis.sonatypecentralupload.SonatypeCentralUploadTask
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
     kotlin("jvm") version "2.0.21"
     `maven-publish`
+    id("com.github.johnrengelman.shadow") version "7.+"
     id("cl.franciscosolis.sonatype-central-upload") version "1.0.2"
 }
 
 group = "com.tksimeji"
-version = "0.0.0"
+version = "0.0.1"
 
 java {
     withSourcesJar()
@@ -62,14 +64,18 @@ tasks.test {
     useJUnitPlatform()
 }
 
+tasks.named<ShadowJar>("shadowJar") {
+    archiveClassifier.set("")
+}
+
 tasks.named<SonatypeCentralUploadTask>("sonatypeCentralUpload") {
-    dependsOn("jar", "sourcesJar", "javadocJar", "generatePomFileForMavenPublication")
+    dependsOn("shadowJar", "sourcesJar", "javadocJar", "generatePomFileForMavenPublication")
 
     username = System.getenv("SONATYPE_CENTRAL_USERNAME")
     password = System.getenv("SONATYPE_CENTRAL_PASSWORD")
 
     archives = files(
-        tasks.named("jar"),
+        tasks.named("shadowJar"),
         tasks.named("sourcesJar"),
         tasks.named("javadocJar"),
     )
