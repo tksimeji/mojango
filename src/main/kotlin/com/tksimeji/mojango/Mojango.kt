@@ -13,6 +13,7 @@ object Mojango {
      *
      * @return Time To Live
      */
+    @JvmStatic
     fun getTtl(): Long {
         return ttl
     }
@@ -22,6 +23,7 @@ object Mojango {
      *
      * @param ttl Time To Live
      */
+    @JvmStatic
     fun setTtl(ttl: Long) {
         this.ttl = ttl
     }
@@ -31,6 +33,7 @@ object Mojango {
      *
      * @return Rate Limit
      */
+    @JvmStatic
     fun getRateLimit(): Int {
         return rateLimit
     }
@@ -40,6 +43,7 @@ object Mojango {
      *
      * @param rateLimit Rate Limit
      */
+    @JvmStatic
     fun setRateLimit(rateLimit: Int) {
         this.rateLimit = rateLimit
     }
@@ -50,6 +54,7 @@ object Mojango {
      * @param uuid Account UUID
      * @return Minecraft account
      */
+    @JvmStatic
     fun account(uuid: UUID): MinecraftAccount {
         return MinecraftAccount.instances
             .find { it.getUniqueId() == uuid }
@@ -62,6 +67,7 @@ object Mojango {
      * @param name Account name
      * @return Minecraft account
      */
+    @JvmStatic
     fun account(name: String): MinecraftAccount {
         return account(parseId(MojangAPI.fetch(Endpoint.MINECRAFT_NAME.url("name=$name")).asJsonObject.get("id").asString))
     }
